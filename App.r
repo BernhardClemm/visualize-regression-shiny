@@ -4,6 +4,7 @@ library(reshape2)
 library(foreign)
 library(tibble)
 library(markdown)
+library(tidyverse)
 
 # Load data
 
@@ -53,12 +54,11 @@ ui <- fluidPage(
       
       plotlyOutput(outputId = "p"),
       
-      tabsetPanel(
-        tabPanel("Instructions", includeMarkdown("instruction.md")),
-        tabPanel("About", includeMarkdown("about.md")))
-      
-    )
-  )
+    )),
+  
+  tabsetPanel(
+      tabPanel("Instructions", includeMarkdown("instruction.md")),
+      tabPanel("About", includeMarkdown("about.md")))
 )
 
 # Server
