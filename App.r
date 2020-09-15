@@ -3,6 +3,7 @@ library(plotly)
 library(reshape2)
 library(foreign)
 library(tibble)
+library(markdown)
 
 # Load data
 
