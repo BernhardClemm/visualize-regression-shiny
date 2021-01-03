@@ -14,10 +14,10 @@ data <- read.dta("./bes_f2f_2017_v1.3.dta")
 # Recode data
 ##Check: https://www.britishelectionstudy.com/wp-content/uploads/2019/01/BES-2017-F2F-codebook.pdf
 
-data %<>% mutate(political_interest = case_when(a03 == "Not at all interested" ~ 1,
-                                                a03 == "Not very interested" ~ 2,
-                                                a03 == "Fairly interested" ~ 3,
-                                                a03 == "Very interested" ~ 4)) %>%
+data %<>% mutate(political_interest = case_when(a03 == "Not at all interested" ~ 0,
+                                                a03 == "Not very interested" ~ 1,
+                                                a03 == "Fairly interested" ~ 2,
+                                                a03 == "Very interested" ~ 3)) %>%
   mutate(political_trust = case_when(n03 == "0 No trust" ~ 0,
                                      n03 == "1" ~ 1,
                                      n03 == "2" ~ 2,
@@ -34,12 +34,12 @@ data %<>% mutate(political_interest = case_when(a03 == "Not at all interested" ~
                                      k02 == "Yes" ~ 2)) %>%
   mutate(canvassed = case_when(k11 == "No" ~ 1,
                                k11 == "Yes" ~ 2)) %>%
-  mutate(education_level = case_when(edlevel == "No qualifications" ~ 1,
-                                     edlevel == "Below GCSE" ~ 2,
-                                     edlevel == "GCSE" ~ 3,
-                                     edlevel == "A-level" ~ 4,
-                                     edlevel == "Undergraduate" ~ 5,
-                                     edlevel == "Postgrad" ~ 6)) %>%
+  mutate(education_level = case_when(edlevel == "No qualifications" ~ 0,
+                                     edlevel == "Below GCSE" ~ 1,
+                                     edlevel == "GCSE" ~ 2,
+                                     edlevel == "A-level" ~ 3,
+                                     edlevel == "Undergraduate" ~ 4,
+                                     edlevel == "Postgrad" ~ 5)) %>%
   mutate(age = as.numeric(Age)) %>%
   mutate(age = ifelse(age == -2, NA, age)) %>%
   mutate(ideology = as.character(e01)) %>%
