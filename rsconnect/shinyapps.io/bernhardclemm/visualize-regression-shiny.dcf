@@ -5,9 +5,9 @@ account: bernhardclemm
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2811584
-bundleId: 4046049
+bundleId: 4132904
 url: https://bernhardclemm.shinyapps.io/visualize-regression-shiny/
-when: 1609438285.19743
+when: 1611400450.51297
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: .gitattributes|bes_f2f_2017_v1.3.dta|data-preparation.R
