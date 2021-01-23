@@ -22,21 +22,21 @@ ui <- fluidPage(
         inputId = "z",
         label = "Dependent variable",
         choices = names(data),
-        selected = "political_interest",
+        selected = "political_trust",
         multiple = FALSE
       ),
       selectInput(
         inputId = "x",
         label = "Independent variable 1",
         choices = names(data),
-        selected = "education_level",
+        selected = "age",
         multiple = FALSE
       ),
       selectInput(
         inputId = "y",
         label = "Independent variable 2",
         choices = c("none", names(data)),
-        selected = "none",
+        selected = "ideology",
         multiple = FALSE
       ),
       checkboxInput(
